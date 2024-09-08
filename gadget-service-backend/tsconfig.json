@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true, // Optional, can be useful for ignoring lib checks
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"]
+  },
+  "include": ["./src/**/*", "./src/types/express.d.ts"],
+  "paths": {
+      "*": ["types/*"]
+  },
+  "exclude": ["node_modules"]
+}
