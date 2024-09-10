@@ -1,7 +1,6 @@
 // src/controllers/callRequestController.ts
 import { Request, Response } from 'express';
 import CallRequest from '../models/CallRequest';
-import { sendCallRequestToTelegram } from '../services/telegramBot'; // Import the Telegram bot service
 
 // Create call request
 export const createCallRequest = async (req: Request, res: Response) => {
@@ -14,8 +13,6 @@ export const createCallRequest = async (req: Request, res: Response) => {
     console.log("Generated UUID:", newCallRequest._id);
     const savedCallRequest = await newCallRequest.save();
 
-    // Send the call request to Telegram via the bot
-    //await sendCallRequestToTelegram(name, phone);
 
     // Send the saved call request data as a response
     res.status(201).json(savedCallRequest);
